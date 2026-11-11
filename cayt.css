@@ -1,0 +1,101 @@
+
+        :root {
+            --color-pink: #FAD7F5;
+            --color-gray: #CCCCCC;
+            --color-light-blue: #F0FAFF;
+            --color-dark: #2A2A2A;
+            --color-accent: #D81B60;
+        }
+
+        body {
+            background-color: var(--color-light-blue);
+            font-family: Arial, sans-serif;
+            color: var(--color-dark);
+            scroll-behavior: smooth;
+        }
+
+        .font-bold-italic, h1, h2, h3, .nav-link, .btn {
+            font-weight: bold !important;
+            font-style: italic !important;
+        }
+
+        .navbar-custom {
+            background-color: var(--color-light-blue);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px dashed var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        .bg-pink { background-color: var(--color-pink) !important; }
+        .bg-gray-custom { background-color: var( --color-light-blue) !important; }
+        .bg-light-blue { background-color: var(--color-light-blue) !important; }
+
+        .card-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: var(--color-dark);
+            color: #fff;
+            padding: 30px 0;
+        }
+
+.glow-title {
+    color: #000000; 
+    position: relative;
+    display: inline-block;
+}
+
+.glow-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #ffffff, #FAD7F5, #ffffff); /* Градиент подсветки */
+    box-shadow: 0 0 10px #D81B60, 0 0 20px #FAD7F5; /* Эффект свечения */
+    border-radius: 2px;
+}
+
+.gallery-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Логика показа конкретного слайда в зависимости от выбранной категории и радиокнопки */
+#cat-study:checked ~ .gallery-wrapper #study-1:checked ~ .slide-study-1,
+#cat-study:checked ~ .gallery-wrapper #study-2:checked ~ .slide-study-2,
+#cat-events:checked ~ .gallery-wrapper #events-1:checked ~ .slide-events-1,
+#cat-events:checked ~ .gallery-wrapper #events-2:checked ~ .slide-events-2 {
+    display: block;
+}
+
+/* Подсветка активной кнопки категории сверху */
+#cat-study:checked ~ div .cat-btn-study,
+#cat-events:checked ~ div .cat-btn-events {
+    background-color: #212529;
+    color: #fff;
+}
+
+  
